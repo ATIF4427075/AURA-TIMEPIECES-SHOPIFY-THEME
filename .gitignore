@@ -3,11 +3,18 @@
 Thumbs.db
 desktop.ini
 
-# Python Cache
+# Python & Scripts
 __pycache__/
 *.py[cod]
 *$py.class
 *.log
+build_shopify_zip.py
+
+# Standalone Local Web App & Zip Archive (Not part of Shopify theme structure)
+index.html
+pages/
+demo-data/
+*.zip
 
 # Editor directories
 .vscode/

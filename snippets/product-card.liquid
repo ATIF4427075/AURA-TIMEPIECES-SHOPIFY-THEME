@@ -4,7 +4,7 @@
 <article class="product-card" data-product-id="{{ product.id | default: 'demo' }}">
   <div class="card-media">
     <span class="card-badge-top">{{ product.tags | first | default: 'MASTERPIECE' }}</span>
-    <img src="{{ product.featured_image | image_url: width: 600 | default: 'assets/images/pagani_dive_macro.jpg' }}" alt="{{ product.title | escape }}" loading="lazy">
+    <img src="{{ product.featured_image | image_url: width: 600 | default: '' }}" alt="{{ product.title | escape }}" loading="lazy">
     <div class="card-quick-actions">
       <button class="icon-action-btn" title="Wishlist" aria-label="Add to wishlist" onclick="AuraStore.toggleWishlist('{{ product.id }}')">
         <i class="fa-regular fa-heart"></i>

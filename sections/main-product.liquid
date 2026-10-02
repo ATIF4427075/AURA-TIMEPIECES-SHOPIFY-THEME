@@ -4,17 +4,17 @@
       <!-- Left: Gallery -->
       <div class="showcase-gallery">
         <div class="main-gallery-view">
-          <img id="productPageMainImg" src="{{ product.featured_image | image_url: width: 800 | default: 'assets/images/pagani_dive_macro.jpg' }}" alt="{{ product.title | default: 'Timepiece' }}">
+          <img id="productPageMainImg" src="{{ product.featured_image | image_url: width: 800 | default: '' }}" alt="{{ product.title | default: 'Timepiece' }}">
         </div>
         <div class="gallery-thumbnails">
           <div class="thumb-item active">
-            <img src="{{ product.featured_image | image_url: width: 200 | default: 'assets/images/pagani_dive_macro.jpg' }}" alt="View 1">
+            <img src="{{ product.featured_image | image_url: width: 200 | default: '' }}" alt="View 1">
           </div>
           <div class="thumb-item">
-            <img src="assets/images/pagani_dive_poster.jpg" alt="Poster Angle">
+            <img src="{{ 'pagani_dive_poster.jpg' | asset_url }}" alt="Poster Angle">
           </div>
           <div class="thumb-item">
-            <img src="assets/images/lume_night_glow.jpg" alt="Lume Glow">
+            <img src="{{ 'lume_night_glow.jpg' | asset_url }}" alt="Lume Glow">
           </div>
         </div>
       </div>
