@@ -1,0 +1,128 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#070a11">
+    <link rel="canonical" href="{{ canonical_url | default: 'https://auratimepieces.com' }}">
+
+    <title>
+      {{ page_title | default: 'AURA TIMEPIECES | Haute Horlogerie & Luxury Automatic Watches' }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name | default: 'AURA TIMEPIECES' }}{% endunless -%}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% else %}
+      <meta name="description" content="Discover AURA Haute Horlogerie, Pagani Design, and Benyar luxury automatic and chronograph timepieces. Engineered with sapphire crystal, 100M water resistance, and Japanese/Swiss calibers.">
+    {% endif %}
+
+    <!-- FontAwesome 6 Pro CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Theme CSS -->
+    {{ 'main.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="assets/main.css">
+
+    {{ content_for_header }}
+  </head>
+
+  <body class="template-{{ template.name | default: 'index' }}">
+    <!-- Announcement Bar -->
+    {% section 'announcement-bar' %}
+
+    <!-- Global Header -->
+    {% section 'header' %}
+
+    <!-- Main Content -->
+    <main id="MainContent" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    <!-- Global Footer -->
+    {% section 'footer' %}
+
+    <!-- Cart Drawer -->
+    {% render 'cart-drawer' %}
+
+    <!-- Modals & Overlays -->
+    <!-- Quick View Modal -->
+    <div id="quickViewModalOverlay" class="modal-overlay" onclick="if(event.target === this) AuraStore.closeModal('quickViewModalOverlay')">
+      <div class="modal-dialog">
+        <button class="modal-close-btn" onclick="AuraStore.closeModal('quickViewModalOverlay')" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div id="quickViewModalBody">
+          <!-- Dynamic Content via theme.js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="searchModalOverlay" class="modal-overlay" onclick="if(event.target === this) AuraStore.closeModal('searchModalOverlay')">
+      <div class="modal-dialog" style="max-width: 600px; padding: 24px;">
+        <button class="modal-close-btn" onclick="AuraStore.closeModal('searchModalOverlay')" aria-label="Close search">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h3 style="font-size: 1.3rem; margin-bottom: 16px;"><i class="fa-solid fa-magnifying-glass" style="color: var(--color-gold);"></i> Search Timepieces</h3>
+        <input type="text" id="siteSearchInput" placeholder="Search by model, brand, complication..." style="width: 100%; padding: 14px 18px; background: #070a11; border: 1px solid var(--color-border-gold); border-radius: 8px; color: #fff; font-size: 1rem; margin-bottom: 16px;">
+        <div id="siteSearchResults" style="max-height: 350px; overflow-y: auto;"></div>
+      </div>
+    </div>
+
+    <!-- Checkout Simulator Modal -->
+    <div id="checkoutModalOverlay" class="modal-overlay" onclick="if(event.target === this) AuraStore.closeModal('checkoutModalOverlay')">
+      <div class="modal-dialog" style="max-width: 650px; padding: 32px;">
+        <button class="modal-close-btn" onclick="AuraStore.closeModal('checkoutModalOverlay')" aria-label="Close checkout">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div id="checkoutModalBody">
+          <div style="text-align: center; margin-bottom: 24px;">
+            <div class="logo-crown" style="font-size: 2rem; margin-bottom: 6px;"><i class="fa-solid fa-crown"></i></div>
+            <h2 style="font-size: 1.6rem;">AURA Express Insured Checkout</h2>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">Encrypted 256-bit SSL Bank Grade Security</p>
+          </div>
+
+          <div id="checkoutOrderSummary" style="margin-bottom: 24px;"></div>
+
+          <form onsubmit="event.preventDefault(); AuraStore.completeCheckout();" style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <input type="text" placeholder="First Name" required style="background: #070a11; border: 1px solid var(--color-border); padding: 12px; border-radius: 6px; color: #fff;">
+              <input type="text" placeholder="Last Name" required style="background: #070a11; border: 1px solid var(--color-border); padding: 12px; border-radius: 6px; color: #fff;">
+            </div>
+            <input type="email" placeholder="Email Address for Certificate of Origin & Tracking" required style="background: #070a11; border: 1px solid var(--color-border); padding: 12px; border-radius: 6px; color: #fff;">
+            <input type="tel" placeholder="Phone Number (for Courier Dispatch Delivery)" required style="background: #070a11; border: 1px solid var(--color-border); padding: 12px; border-radius: 6px; color: #fff;">
+            <input type="text" placeholder="Delivery Street Address" required style="background: #070a11; border: 1px solid var(--color-border); padding: 12px; border-radius: 6px; color: #fff;">
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 12px;">
+              <input type="text" placeholder="City" required style="background: #070a11; border: 1px solid var(--color-border); padding: 12px; border-radius: 6px; color: #fff;">
+              <input type="text" placeholder="State / Region" required style="background: #070a11; border: 1px solid var(--color-border); padding: 12px; border-radius: 6px; color: #fff;">
+              <input type="text" placeholder="Postal Code" required style="background: #070a11; border: 1px solid var(--color-border); padding: 12px; border-radius: 6px; color: #fff;">
+            </div>
+
+            <div style="padding: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: 8px; margin-top: 8px;">
+              <label style="display: flex; align-items: center; gap: 10px; font-weight: 700; cursor: pointer;">
+                <input type="radio" name="paymentMethod" checked style="accent-color: var(--color-gold);">
+                <span><i class="fa-solid fa-truck-fast" style="color: var(--color-gold);"></i> Cash on Delivery (COD) / Direct Bank Transfer</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" style="margin-top: 10px; font-size: 1rem;">
+              <i class="fa-solid fa-lock"></i> Place Order & Dispatch Insured Package
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ 'products.js' | asset_url }}"></script>
+    <script src="assets/js/products.js"></script>
+    <script src="{{ 'audio.js' | asset_url }}"></script>
+    <script src="assets/js/audio.js"></script>
+    <script src="{{ 'theme.js' | asset_url }}"></script>
+    <script src="assets/js/theme.js"></script>
+  </body>
+</html>

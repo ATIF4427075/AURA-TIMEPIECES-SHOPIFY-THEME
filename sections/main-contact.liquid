@@ -1,0 +1,50 @@
+<section class="section-padding" aria-label="Contact and Boutique Appointment">
+  <div class="container" style="max-width: 800px;">
+    <div class="section-header">
+      <span class="section-tag"><i class="fa-solid fa-headset"></i> HOROLOGIST CONCIERGE</span>
+      <h2>Contact & <span class="gold-text">Boutique Inquiries</span></h2>
+      <p>Have a question regarding custom engravings, sizing, or private salon viewings? Our master specialists are available 24/7.</p>
+    </div>
+
+    <div style="background: var(--color-surface); border: 1px solid var(--color-border-gold); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-lg);">
+      {% form 'contact' %}
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px;">Full Name</label>
+            <input type="text" name="contact[name]" required style="width: 100%; background: #070a11; border: 1px solid var(--color-border); padding: 12px 16px; border-radius: 6px; color: #fff;">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px;">Email Address</label>
+            <input type="email" name="contact[email]" required style="width: 100%; background: #070a11; border: 1px solid var(--color-border); padding: 12px 16px; border-radius: 6px; color: #fff;">
+          </div>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px;">Inquiry Type</label>
+          <select name="contact[type]" style="width: 100%; background: #070a11; border: 1px solid var(--color-border); padding: 12px 16px; border-radius: 6px; color: #fff;">
+            <option value="order">Order Tracking & Sizing Sizing Request</option>
+            <option value="warranty">5-Year Warranty Claim</option>
+            <option value="bespoke">Bespoke Atelier Customization</option>
+            <option value="salon">Private Boutique Appointment</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <label style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px;">Message</label>
+          <textarea name="contact[body]" rows="5" required style="width: 100%; background: #070a11; border: 1px solid var(--color-border); padding: 12px 16px; border-radius: 6px; color: #fff;"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" onclick="event.preventDefault(); AuraStore.showToast('Your message has been dispatched to our chief horologist.', 'success');">
+          <i class="fa-solid fa-paper-plane"></i> Send Direct Inquiry
+        </button>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Contact",
+  "settings": []
+}
+{% endschema %}

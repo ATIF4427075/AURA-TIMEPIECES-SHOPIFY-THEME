@@ -1,0 +1,9 @@
+{% comment %}
+  AURA Price Snippet
+{% endcomment %}
+<div class="price-wrapper">
+  <span class="current-price">{{ price | money }}</span>
+  {% if compare_at_price > price %}
+    <span class="compare-price">{{ compare_at_price | money }}</span>
+  {% endif %}
+</div>

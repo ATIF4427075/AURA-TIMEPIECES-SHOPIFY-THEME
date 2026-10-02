@@ -1,0 +1,123 @@
+<section id="showcaseSection" class="section-padding product-showcase-section" aria-label="Signature Product Showcase">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i class="fa-solid fa-crown"></i> OFFICIAL STORE EXCLUSIVE</span>
+      <h2>PAGANI DESIGN &bull; <span class="gold-text">CLASSIC DIVE STYLE</span></h2>
+      <p>Men's Automatic Watch &bull; Built for Adventure, Designed for You.</p>
+    </div>
+
+    <div class="showcase-layout">
+      <!-- Left: Gallery -->
+      <div class="showcase-gallery">
+        <div class="main-gallery-view">
+          <img id="featuredShowcaseImg" src="{{ 'pagani_dive_poster.jpg' | asset_url | default: 'assets/images/pagani_dive_poster.jpg' }}" alt="Pagani Design Classic Dive Watch">
+          <span class="card-badge-top" style="top: 18px; left: 18px;">AUTOMATIC &bull; 100M</span>
+        </div>
+        <div class="gallery-thumbnails">
+          <div class="thumb-item active" data-img="assets/images/pagani_dive_poster.jpg">
+            <img src="assets/images/pagani_dive_poster.jpg" alt="Pagani Poster">
+          </div>
+          <div class="thumb-item" data-img="assets/images/pagani_dive_macro.jpg">
+            <img src="assets/images/pagani_dive_macro.jpg" alt="Macro Dial Shot">
+          </div>
+          <div class="thumb-item" data-img="assets/images/benyar_lifestyle_poster.jpg">
+            <img src="assets/images/benyar_lifestyle_poster.jpg" alt="Benyar Poster">
+          </div>
+          <div class="thumb-item" data-img="assets/images/naviforce_military_poster.jpg">
+            <img src="assets/images/naviforce_military_poster.jpg" alt="Naviforce Poster">
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Details & Purchase -->
+      <div class="showcase-details">
+        <span class="product-vendor-badge"><i class="fa-solid fa-crown"></i> PAGANI DESIGN &bull; TIMELESS STYLE SINCE 2008</span>
+        <h2 class="product-main-title">Classic Dive Style 100M Automatic</h2>
+        
+        <div class="product-ratings-summary">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <span style="font-weight: 700; color: #fff;">4.95 / 5.0</span>
+          <span style="color: var(--color-text-muted);">(842 Verified Customer Reviews)</span>
+        </div>
+
+        <p style="color: var(--color-text-secondary); line-height: 1.6; font-size: 0.96rem;">
+          <strong>More Than Just a Watch &mdash; Luxury on Your Wrist.</strong> Equipped with the Japanese Seiko NH35A kinetic self-winding movement that never requires batteries, genuine scratch-proof sapphire crystal, and 100M water resistance.
+        </p>
+
+        <div class="product-price-bar">
+          <span class="price">₨ 24,999</span>
+          <span class="compare">₨ 34,999</span>
+          <span class="hero-discount-badge"><i class="fa-solid fa-tag"></i> 28% OFF</span>
+        </div>
+
+        <!-- Stock Indicator -->
+        <div class="stock-indicator">
+          <span class="stock-pulse"></span>
+          <span>Only <strong>18 watches</strong> remaining in stock for immediate Cash on Delivery dispatch.</span>
+        </div>
+
+        <!-- 4 Poster Feature Highlight Callouts -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0;">
+          <div style="background: #090e17; border: 1px solid var(--color-border-gold); padding: 10px; border-radius: 6px; text-align: center;">
+            <span style="font-size: 0.74rem; font-weight: 800; color: var(--color-gold);">ELEGANT DIAL</span>
+            <p style="font-size: 0.68rem; color: var(--color-text-muted); margin-top: 2px;">Bold Markers</p>
+          </div>
+          <div style="background: #090e17; border: 1px solid var(--color-border-gold); padding: 10px; border-radius: 6px; text-align: center;">
+            <span style="font-size: 0.74rem; font-weight: 800; color: var(--color-gold);">SCREW-DOWN</span>
+            <p style="font-size: 0.68rem; color: var(--color-text-muted); margin-top: 2px;">Waterproof Crown</p>
+          </div>
+          <div style="background: #090e17; border: 1px solid var(--color-border-gold); padding: 10px; border-radius: 6px; text-align: center;">
+            <span style="font-size: 0.74rem; font-weight: 800; color: var(--color-gold);">STEEL STRAP</span>
+            <p style="font-size: 0.68rem; color: var(--color-text-muted); margin-top: 2px;">Solid Comfort</p>
+          </div>
+          <div style="background: #090e17; border: 1px solid var(--color-border-gold); padding: 10px; border-radius: 6px; text-align: center;">
+            <span style="font-size: 0.74rem; font-weight: 800; color: var(--color-gold);">PREMIUM</span>
+            <p style="font-size: 0.68rem; color: var(--color-text-muted); margin-top: 2px;">Seiko NH35 Move</p>
+          </div>
+        </div>
+
+        <!-- Quantity & Buy Actions -->
+        <div class="quantity-buy-actions">
+          <div class="quantity-row">
+            <div class="qty-stepper">
+              <button class="qty-btn" onclick="let inp = document.getElementById('showcaseQty'); let v = parseInt(inp.value)||1; if(v>1) inp.value = v - 1;">−</button>
+              <input type="number" id="showcaseQty" class="qty-input" value="1" min="1" max="10" readonly>
+              <button class="qty-btn" onclick="let inp = document.getElementById('showcaseQty'); let v = parseInt(inp.value)||1; inp.value = v + 1;">+</button>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="let q = parseInt(document.getElementById('showcaseQty').value)||1; AuraStore.addToCart('pagani-classic-dive', q);">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart &bull; ₨ 24,999
+            </button>
+          </div>
+          
+          <button class="btn btn-buy-now btn-block" onclick="let q = parseInt(document.getElementById('showcaseQty').value)||1; AuraStore.addToCart('pagani-classic-dive', q); AuraStore.openCheckoutModal();">
+            <i class="fa-solid fa-bolt"></i> Buy Now with Free Cash on Delivery
+          </button>
+        </div>
+
+        <!-- Payment Badges -->
+        <div class="payment-badges-row">
+          <i class="fa-solid fa-truck-fast" style="color: var(--color-gold);"></i>
+          <span style="font-size: 0.82rem; font-weight: 700; color: #fff;">Free Cash on Delivery (COD) & 5-Year Warranty Across Pakistan</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Showcase",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product Showcase"
+    }
+  ]
+}
+{% endschema %}

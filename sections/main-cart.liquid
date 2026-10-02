@@ -1,0 +1,27 @@
+<section class="section-padding" aria-label="Shopping Cart">
+  <div class="container" style="max-width: 900px;">
+    <div class="section-header">
+      <span class="section-tag"><i class="fa-solid fa-vault"></i> TIMEPIECE VAULT</span>
+      <h2>Your Horology <span class="gold-text">Cart</span></h2>
+    </div>
+
+    <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px;">
+      <div id="mainCartContent">
+        <!-- Rendered dynamically -->
+        <div class="empty-cart-state" id="mainCartEmpty">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <h3>Your Vault Selection is Empty</h3>
+          <p style="color: var(--color-text-muted);">Explore our flagship automatic and chronograph timepieces.</p>
+          <a href="/#catalogSection" class="btn btn-primary">Browse Collections</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Cart",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,103 @@
+<header class="site-header" role="banner">
+  <div class="header-container">
+    <!-- Brand Logo -->
+    <a href="/" class="header-logo" aria-label="AURA TIMEPIECES Home">
+      <div class="logo-crown"><i class="fa-solid fa-crown"></i></div>
+      <div class="logo-text">
+        <span class="logo-brand">{{ section.settings.logo_text | default: 'AURA' }}</span>
+        <span class="logo-tag">{{ section.settings.logo_tagline | default: 'HAUTE HORLOGERIE' }}</span>
+      </div>
+    </a>
+
+    <!-- Visible Primary Navigation Menu -->
+    <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
+      <a href="#heroSection" class="nav-link">Home</a>
+      <a href="#catalogSection" class="nav-link">Shop</a>
+      <a href="#coreFeaturesSection" class="nav-link">Features</a>
+      <a href="#howItWorksSection" class="nav-link">How It Works</a>
+      <a href="#reviewsSection" class="nav-link">Reviews</a>
+      <a href="#faqSection" class="nav-link">FAQ</a>
+      <a href="#lifestyleSection" class="nav-link">Lifestyle</a>
+      <a href="#footerSection" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <!-- Currency Switcher -->
+      <select class="currency-select" aria-label="Currency Selector">
+        <option value="PKR">PKR (₨)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="GBP">GBP (£)</option>
+        <option value="AED">AED (د.إ)</option>
+        <option value="JPY">JPY (¥)</option>
+      </select>
+
+      <!-- Mechanical Sound Toggle -->
+      <button class="action-btn sound-toggle-btn" title="Toggle Swiss Mechanical Sound" aria-label="Toggle mechanical sound">
+        <i class="fa-solid fa-volume-high"></i>
+      </button>
+
+      <!-- Search Trigger -->
+      <button class="action-btn" title="Search Timepieces" aria-label="Search" onclick="AuraStore.openModal('searchModalOverlay')">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      <!-- Wishlist Trigger -->
+      <button class="action-btn" title="Wishlist" aria-label="Wishlist" onclick="AuraStore.showToast('You have saved timepieces in your vault ❤️', 'info')">
+        <i class="fa-regular fa-heart"></i>
+        <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+      </button>
+
+      <!-- Cart Drawer Trigger -->
+      <button class="action-btn" title="Cart Vault" aria-label="Cart" onclick="AuraStore.openCartDrawer()">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="badge-count cart-badge-count" style="display: none;">0</span>
+      </button>
+
+      <!-- Mobile Hamburger Menu Button -->
+      <button class="action-btn mobile-menu-btn" title="Menu" aria-label="Open mobile menu" onclick="document.getElementById('mobileNavDrawer').classList.add('active')">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div id="mobileNavDrawer" class="mobile-nav-drawer" role="dialog" aria-modal="true">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <span class="logo-brand" style="font-size: 1.2rem;">AURA TIMEPIECES</span>
+    <button class="drawer-close-btn" onclick="document.getElementById('mobileNavDrawer').classList.remove('active')">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="#heroSection" onclick="document.getElementById('mobileNavDrawer').classList.remove('active')">Home</a>
+    <a href="#catalogSection" onclick="document.getElementById('mobileNavDrawer').classList.remove('active')">Shop Collections</a>
+    <a href="#coreFeaturesSection" onclick="document.getElementById('mobileNavDrawer').classList.remove('active')">Horology Features</a>
+    <a href="#howItWorksSection" onclick="document.getElementById('mobileNavDrawer').classList.remove('active')">White-Glove Process</a>
+    <a href="#reviewsSection" onclick="document.getElementById('mobileNavDrawer').classList.remove('active')">Collector Reviews</a>
+    <a href="#faqSection" onclick="document.getElementById('mobileNavDrawer').classList.remove('active')">Frequently Asked Questions</a>
+    <a href="#footerSection" onclick="document.getElementById('mobileNavDrawer').classList.remove('active')">VIP Concierge & Contact</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Brand Name",
+      "default": "AURA"
+    },
+    {
+      "type": "text",
+      "id": "logo_tagline",
+      "label": "Logo Tagline",
+      "default": "HAUTE HORLOGERIE"
+    }
+  ]
+}
+{% endschema %}

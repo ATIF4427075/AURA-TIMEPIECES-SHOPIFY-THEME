@@ -1,0 +1,31 @@
+<section class="newsletter-section" aria-label="VIP Newsletter">
+  <div class="container">
+    <div style="max-width: 650px; margin: 0 auto; text-align: center;">
+      <span class="section-tag"><i class="fa-solid fa-envelope-open-text"></i> VIP COLLECTORS CLUB</span>
+      <h3>Receive 10% Off Your First Acquisition</h3>
+      <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 8px;">
+        Subscribe for private atelier releases, limited edition allocations, and horology collector insights.
+      </p>
+
+      {% form 'customer', class: 'newsletter-form' %}
+        <input type="hidden" name="contact[tags]" value="newsletter, vip">
+        <input type="email" name="contact[email]" class="newsletter-input" placeholder="Enter your email address..." required aria-label="Email address for VIP newsletter">
+        <button type="submit" class="btn btn-primary" onclick="event.preventDefault(); AuraStore.showToast('🎉 Welcome to VIP Club! Use code <strong>AURA10</strong> for 10% off.', 'success');">
+          Join Vault Club
+        </button>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter Section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Newsletter Section"
+    }
+  ]
+}
+{% endschema %}

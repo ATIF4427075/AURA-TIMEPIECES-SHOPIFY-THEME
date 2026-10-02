@@ -1,0 +1,95 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "hero_headline": "Master Precision. Timeless Prestige.",
+        "hero_subtext": "Engineered for connoisseurs of fine horology. Hand-finished automatic movements, synthetic sapphire crystals, and maritime-grade 316L stainless steel.",
+        "hero_price": "₨ 28,500"
+      }
+    },
+    "trust_bar": {
+      "type": "trust-bar",
+      "settings": {}
+    },
+    "problem_solution": {
+      "type": "problem-solution",
+      "settings": {}
+    },
+    "core_features": {
+      "type": "core-features",
+      "settings": {}
+    },
+    "product_showcase": {
+      "type": "product-showcase",
+      "settings": {}
+    },
+    "catalog_grid": {
+      "type": "catalog-grid",
+      "settings": {}
+    },
+    "feature_grid": {
+      "type": "feature-grid",
+      "settings": {}
+    },
+    "how_it_works": {
+      "type": "how-it-works",
+      "settings": {}
+    },
+    "whats_included": {
+      "type": "whats-included",
+      "settings": {}
+    },
+    "lifestyle": {
+      "type": "lifestyle",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {}
+    },
+    "comparison": {
+      "type": "comparison",
+      "settings": {}
+    },
+    "offer": {
+      "type": "offer",
+      "settings": {}
+    },
+    "guarantee": {
+      "type": "guarantee",
+      "settings": {}
+    },
+    "faq_preview": {
+      "type": "faq-preview",
+      "settings": {}
+    },
+    "final_cta": {
+      "type": "final-cta",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "trust_bar",
+    "problem_solution",
+    "core_features",
+    "product_showcase",
+    "catalog_grid",
+    "feature_grid",
+    "how_it_works",
+    "whats_included",
+    "lifestyle",
+    "reviews",
+    "comparison",
+    "offer",
+    "guarantee",
+    "faq_preview",
+    "final_cta",
+    "newsletter"
+  ]
+}

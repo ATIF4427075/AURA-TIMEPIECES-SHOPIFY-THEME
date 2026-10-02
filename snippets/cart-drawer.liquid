@@ -1,0 +1,39 @@
+{% comment %}
+  AURA Slide-Out Cart Drawer Snippet
+{% endcomment %}
+<div id="cartDrawerOverlay" class="cart-drawer-overlay" onclick="AuraStore.closeCartDrawer()"></div>
+
+<div id="cartDrawer" class="cart-drawer" role="dialog" aria-modal="true" aria-label="Horology Cart Drawer">
+  <div class="drawer-header">
+    <h3><i class="fa-solid fa-vault" style="color: var(--color-gold);"></i> Vault Selection</h3>
+    <button class="drawer-close-btn" onclick="AuraStore.closeCartDrawer()" aria-label="Close cart drawer">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <div class="free-shipping-progress-box">
+    <p id="freeShippingText">Add <strong>₨ 25,000</strong> more to unlock <strong>FREE Insured Express Delivery</strong>!</p>
+    <div class="progress-bar-bg">
+      <div id="freeShippingBar" class="progress-bar-fill" style="width: 0%;"></div>
+    </div>
+  </div>
+
+  <div id="drawerCartItems" class="drawer-items-list">
+    <!-- Populated dynamically via theme.js -->
+  </div>
+
+  <div class="drawer-footer">
+    <div class="drawer-subtotal-row">
+      <span>Subtotal:</span>
+      <span id="drawerSubtotal" class="subtotal-amount">₨ 0</span>
+    </div>
+    <p style="font-size: 0.78rem; color: var(--color-text-muted);">Taxes & fully insured worldwide shipping calculated at final checkout.</p>
+    
+    <button class="btn btn-primary btn-block" onclick="AuraStore.openCheckoutModal()">
+      <i class="fa-solid fa-lock"></i> Proceed to Insured Checkout
+    </button>
+    <button class="btn btn-secondary btn-block" onclick="AuraStore.closeCartDrawer()">
+      Continue Exploring Timepieces
+    </button>
+  </div>
+</div>

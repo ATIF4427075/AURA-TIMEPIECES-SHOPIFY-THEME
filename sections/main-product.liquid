@@ -1,0 +1,108 @@
+<section class="section-padding" aria-label="Product Details">
+  <div class="container">
+    <div class="showcase-layout">
+      <!-- Left: Gallery -->
+      <div class="showcase-gallery">
+        <div class="main-gallery-view">
+          <img id="productPageMainImg" src="{{ product.featured_image | image_url: width: 800 | default: 'assets/images/pagani_dive_macro.jpg' }}" alt="{{ product.title | default: 'Timepiece' }}">
+        </div>
+        <div class="gallery-thumbnails">
+          <div class="thumb-item active">
+            <img src="{{ product.featured_image | image_url: width: 200 | default: 'assets/images/pagani_dive_macro.jpg' }}" alt="View 1">
+          </div>
+          <div class="thumb-item">
+            <img src="assets/images/pagani_dive_poster.jpg" alt="Poster Angle">
+          </div>
+          <div class="thumb-item">
+            <img src="assets/images/lume_night_glow.jpg" alt="Lume Glow">
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Product Info & Purchasing Area -->
+      <div class="showcase-details">
+        <span class="product-vendor-badge"><i class="fa-solid fa-crown"></i> {{ product.vendor | default: 'PAGANI DESIGN' }}</span>
+        <h1 class="product-main-title">{{ product.title | default: 'Classic Dive Style 100M Automatic' }}</h1>
+
+        <div class="product-ratings-summary">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <span style="font-weight: 700; color: #fff;">4.9 / 5.0</span>
+          <span style="color: var(--color-text-muted);">(684 Verified Reviews)</span>
+        </div>
+
+        <div class="product-price-bar">
+          <span class="price">{{ product.price | money | default: '₨ 28,500' }}</span>
+          <span class="compare">{{ product.compare_at_price | money | default: '₨ 39,900' }}</span>
+          <span class="hero-discount-badge"><i class="fa-solid fa-tag"></i> 28% OFF</span>
+        </div>
+
+        <div class="stock-indicator">
+          <span class="stock-pulse"></span>
+          <span>Limited batch production: In stock and ready for immediate insured dispatch.</span>
+        </div>
+
+        <!-- Description -->
+        <div style="color: var(--color-text-secondary); line-height: 1.7; font-size: 0.95rem;">
+          {{ product.description | default: '<p>The Pagani Design Classic Dive Style is an homage to maritime horology excellence. Powered by the renowned Japanese Seiko NH35A automatic mechanical movement, it delivers precision timekeeping without batteries. Built with marine-grade 316L stainless steel, a scratch-proof synthetic sapphire crystal, and an authentic ceramic unidirectional rotating bezel.</p>' }}
+        </div>
+
+        <!-- Engraving Option -->
+        <div class="engraving-box">
+          <label><i class="fa-solid fa-pen-nib" style="color: var(--color-gold);"></i> Complimentary Caseback Laser Engraving (Optional)</label>
+          <input type="text" id="mainProductEngraving" class="engraving-input" placeholder="e.g. M. Sterling 2026" maxlength="28">
+        </div>
+
+        <!-- Purchasing Form -->
+        <form method="post" action="/cart/add" onsubmit="event.preventDefault(); AuraStore.addToCart('pagani-classic-dive', parseInt(document.getElementById('mainProductQty').value)||1, document.getElementById('mainProductEngraving').value);">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+          
+          <div class="quantity-buy-actions">
+            <div class="quantity-row">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn" onclick="let inp = document.getElementById('mainProductQty'); let v = parseInt(inp.value)||1; if(v>1) inp.value = v - 1;">−</button>
+                <input type="number" id="mainProductQty" name="quantity" class="qty-input" value="1" min="1" max="10" readonly>
+                <button type="button" class="qty-btn" onclick="let inp = document.getElementById('mainProductQty'); let v = parseInt(inp.value)||1; inp.value = v + 1;">+</button>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+              </button>
+            </div>
+
+            <button type="button" class="btn btn-buy-now btn-block" onclick="AuraStore.addToCart('pagani-classic-dive', parseInt(document.getElementById('mainProductQty').value)||1, document.getElementById('mainProductEngraving').value); AuraStore.openCheckoutModal();">
+              <i class="fa-solid fa-bolt"></i> Buy It Now
+            </button>
+          </div>
+        </form>
+
+        <!-- Guarantee Pills -->
+        <div class="hero-trust-mini" style="margin-top: 20px;">
+          <div class="trust-item-mini">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Insured Express Courier</span>
+          </div>
+          <div class="trust-item-mini">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>5-Year Warranty</span>
+          </div>
+          <div class="trust-item-mini">
+            <i class="fa-solid fa-rotate-left"></i>
+            <span>30-Day Evaluation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Product",
+  "settings": []
+}
+{% endschema %}

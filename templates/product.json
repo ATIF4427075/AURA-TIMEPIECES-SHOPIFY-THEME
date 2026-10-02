@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "main_product": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "feature_grid": {
+      "type": "feature-grid",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {}
+    },
+    "guarantee": {
+      "type": "guarantee",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main_product",
+    "feature_grid",
+    "reviews",
+    "guarantee"
+  ]
+}

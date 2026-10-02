@@ -1,0 +1,23 @@
+{
+  "current": {
+    "color_bg": "#070a11",
+    "color_surface": "#0e1524",
+    "color_surface_hover": "#141e33",
+    "color_text": "#f8fafc",
+    "color_text_muted": "#94a3b8",
+    "color_primary": "#d4af37",
+    "color_primary_hover": "#f59e0b",
+    "color_accent": "#10b981",
+    "color_border": "rgba(255, 255, 255, 0.1)",
+    "show_announcement": true,
+    "announcement_text": "COMPLIMENTARY INSURED EXPRESS WORLDWIDE DELIVERY • 5-YEAR INTERNATIONAL WARRANTY • CERTIFIED AUTHENTIC",
+    "cart_type": "drawer",
+    "free_shipping_threshold": 25000,
+    "show_cart_notes": true,
+    "show_custom_engraving_option": true,
+    "social_instagram": "https://instagram.com",
+    "social_facebook": "https://facebook.com",
+    "social_youtube": "https://youtube.com",
+    "social_whatsapp": "https://wa.me/18005550199"
+  }
+}

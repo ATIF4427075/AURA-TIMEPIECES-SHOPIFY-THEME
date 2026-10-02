@@ -1,0 +1,19 @@
+<section class="section-padding" aria-label="Page Content">
+  <div class="container" style="max-width: 850px;">
+    <div class="section-header">
+      <span class="section-tag"><i class="fa-solid fa-file-lines"></i> AURA HOROLOGY</span>
+      <h1>{{ page.title | default: 'Our Heritage' }}</h1>
+    </div>
+
+    <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 40px; line-height: 1.8; color: var(--color-text-secondary);">
+      {{ page.content | default: '<p>AURA TIMEPIECES represents the convergence of fine traditional horology and modern high-tech materials. Hand-finished mechanical calibers, sapphire crystals, and titanium cases crafted without arbitrary middleman markups.</p>' }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Page",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,31 @@
+{% if section.settings.show_announcement %}
+  <aside class="announcement-bar" aria-label="Announcement">
+    <div class="announcement-inner">
+      <span>{{ section.settings.announcement_text | default: 'COMPLIMENTARY INSURED EXPRESS SHIPPING • 5-YEAR INTERNATIONAL WARRANTY • CERTIFIED AUTHENTICITY' }}</span>
+      <span>★</span>
+      <span>{{ section.settings.announcement_text | default: 'COMPLIMENTARY INSURED EXPRESS SHIPPING • 5-YEAR INTERNATIONAL WARRANTY • CERTIFIED AUTHENTICITY' }}</span>
+      <span>★</span>
+      <span>{{ section.settings.announcement_text | default: 'COMPLIMENTARY INSURED EXPRESS SHIPPING • 5-YEAR INTERNATIONAL WARRANTY • CERTIFIED AUTHENTICITY' }}</span>
+    </div>
+  </aside>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show Announcement",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement Text",
+      "default": "COMPLIMENTARY INSURED EXPRESS SHIPPING • 5-YEAR INTERNATIONAL WARRANTY • CERTIFIED AUTHENTICITY"
+    }
+  ]
+}
+{% endschema %}

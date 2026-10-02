@@ -1,0 +1,47 @@
+<section id="catalogSection" class="section-padding catalog-section" aria-label="Product Catalog">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i class="fa-solid fa-layer-group"></i> COMPLETE VAULT</span>
+      <h2>Signature Horology <span class="gold-text">Collections</span></h2>
+      <p>Explore our full lineup of precision automatic dive watches, luxury chronographs, and haute horlogerie tourbillons.</p>
+    </div>
+
+    <!-- Filter & Sort Bar -->
+    <div class="catalog-filter-bar">
+      <div class="filter-pills">
+        <button class="filter-pill active" data-category="all">All Masterpieces</button>
+        <button class="filter-pill" data-category="dive">Automatic Dive</button>
+        <button class="filter-pill" data-category="chronograph">Luxury Chronograph</button>
+        <button class="filter-pill" data-category="military">Tactical Military</button>
+        <button class="filter-pill" data-category="tourbillon">Flying Tourbillon</button>
+        <button class="filter-pill" data-category="dress">Dress Classics</button>
+      </div>
+
+      <div class="sort-select-box">
+        <select id="catalogSortSelect" aria-label="Sort products by">
+          <option value="featured">Sort by: Featured</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="rating">Customer Rating</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Dynamic Grid Rendered via theme.js & Liquid Fallback -->
+    <div id="catalogProductsGrid" class="catalog-grid">
+      <!-- Populated dynamically via theme.js -->
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Catalog Grid",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Catalog Grid"
+    }
+  ]
+}
+{% endschema %}

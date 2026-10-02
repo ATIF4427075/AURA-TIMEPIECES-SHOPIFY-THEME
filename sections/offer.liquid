@@ -1,0 +1,77 @@
+<section class="section-padding offers-section" aria-label="Curated Collector Bundles">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i class="fa-solid fa-gift"></i> EXCLUSIVE BUNDLE DEALS</span>
+      <h2>Limited Time <span class="gold-text">Watch Offers</span></h2>
+      <p>Save up to 30% when ordering complete curated sets with Free Cash on Delivery.</p>
+    </div>
+
+    <div class="offers-grid">
+      <!-- Bundle 1: Single Masterpiece -->
+      <div class="offer-card">
+        <h3>Individual Watch</h3>
+        <p style="color: var(--color-text-muted); font-size: 0.88rem;">1x Pagani Classic Dive Style</p>
+        <div class="offer-price">₨ 24,999</div>
+        <div class="offer-savings">Regular Price: ₨ 34,999</div>
+        <ul class="offer-features">
+          <li><i class="fa-solid fa-check"></i> 1x Pagani Design Automatic Watch</li>
+          <li><i class="fa-solid fa-check"></i> Authentic Hardwood Presentation Box</li>
+          <li><i class="fa-solid fa-check"></i> 5-Year Movement Warranty Card</li>
+          <li><i class="fa-solid fa-check"></i> Free Sizing Tool & Microfiber Cloth</li>
+        </ul>
+        <button class="btn btn-secondary btn-block" onclick="AuraStore.addToCart('pagani-classic-dive', 1)">
+          Order Single Watch
+        </button>
+      </div>
+
+      <!-- Bundle 2: Duo (Featured) -->
+      <div class="offer-card featured-offer">
+        <span class="offer-ribbon">POPULAR &bull; SAVE 30%</span>
+        <h3>Executive Duo Set</h3>
+        <p style="color: var(--color-text-muted); font-size: 0.88rem;">Pagani Dive Automatic + Benyar Chrono</p>
+        <div class="offer-price">₨ 34,999</div>
+        <div class="offer-savings">SAVE ₨ 15,000 (Reg: ₨ 49,999)</div>
+        <ul class="offer-features">
+          <li><i class="fa-solid fa-check"></i> 1x Pagani Design Classic Dive (Automatic)</li>
+          <li><i class="fa-solid fa-check"></i> 1x Benyar Royal Blue Chronograph</li>
+          <li><i class="fa-solid fa-check"></i> Double Travel Watch Roll</li>
+          <li><i class="fa-solid fa-check"></i> Free Cash on Delivery (COD)</li>
+          <li><i class="fa-solid fa-check"></i> 5-Year Global Warranty on Both</li>
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="AuraStore.addToCart('pagani-classic-dive', 1); AuraStore.addToCart('benyar-lifestyle-chrono', 1);">
+          Order Duo Set &bull; ₨ 34,999
+        </button>
+      </div>
+
+      <!-- Bundle 3: Master Trio Vault -->
+      <div class="offer-card">
+        <h3>The Collector Trio</h3>
+        <p style="color: var(--color-text-muted); font-size: 0.88rem;">Pagani Dive + Benyar Chrono + Naviforce</p>
+        <div class="offer-price">₨ 44,999</div>
+        <div class="offer-savings">SAVE ₨ 24,000 (Reg: ₨ 68,999)</div>
+        <ul class="offer-features">
+          <li><i class="fa-solid fa-check"></i> 1x Pagani Classic Dive Automatic</li>
+          <li><i class="fa-solid fa-check"></i> 1x Benyar Royal Blue Chronograph</li>
+          <li><i class="fa-solid fa-check"></i> 1x Naviforce Tactical Sport Watch</li>
+          <li><i class="fa-solid fa-check"></i> 3-Slot Presentation Collector Box</li>
+          <li><i class="fa-solid fa-check"></i> Complete Watchmaker Tool Kit</li>
+        </ul>
+        <button class="btn btn-secondary btn-block" onclick="AuraStore.addToCart('pagani-classic-dive', 1); AuraStore.addToCart('benyar-lifestyle-chrono', 1); AuraStore.addToCart('naviforce-tactical-military', 1);">
+          Order Trio Set &bull; ₨ 44,999
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Offer Bundles",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Offer Bundles"
+    }
+  ]
+}
+{% endschema %}

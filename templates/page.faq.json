@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "faq_preview": {
+      "type": "faq-preview",
+      "settings": {}
+    }
+  },
+  "order": [
+    "faq_preview"
+  ]
+}

@@ -1,0 +1,45 @@
+{% comment %}
+  AURA Haute Horlogerie - Product Card Snippet
+{% endcomment %}
+<article class="product-card" data-product-id="{{ product.id | default: 'demo' }}">
+  <div class="card-media">
+    <span class="card-badge-top">{{ product.tags | first | default: 'MASTERPIECE' }}</span>
+    <img src="{{ product.featured_image | image_url: width: 600 | default: 'assets/images/pagani_dive_macro.jpg' }}" alt="{{ product.title | escape }}" loading="lazy">
+    <div class="card-quick-actions">
+      <button class="icon-action-btn" title="Wishlist" aria-label="Add to wishlist" onclick="AuraStore.toggleWishlist('{{ product.id }}')">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+      <button class="icon-action-btn" title="Quick View" aria-label="Quick view" onclick="AuraStore.openQuickView('{{ product.id }}')">
+        <i class="fa-solid fa-eye"></i>
+      </button>
+      <button class="icon-action-btn" title="Compare" aria-label="Compare" onclick="AuraStore.toggleCompare('{{ product.id }}')">
+        <i class="fa-solid fa-code-compare"></i>
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <span class="card-vendor">{{ product.vendor | default: 'AURA TIMEPIECES' }}</span>
+    <h4 class="card-title">
+      <a href="{{ product.url | default: '#' }}">{{ product.title | default: 'Classic Automatic Dive Watch' }}</a>
+    </h4>
+    <div class="card-specs-mini">
+      <span><i class="fa-solid fa-water"></i> 100M</span>
+      <span><i class="fa-solid fa-circle-notch"></i> 40mm</span>
+      <span><i class="fa-solid fa-star" style="color: var(--color-gold-light);"></i> 4.9</span>
+    </div>
+    <div class="card-price-row">
+      <span class="card-price">{{ product.price | money | default: '₨ 28,500' }}</span>
+      {% if product.compare_at_price > product.price %}
+        <span class="card-compare">{{ product.compare_at_price | money }}</span>
+      {% else %}
+        <span class="card-compare">₨ 39,900</span>
+      {% endif %}
+    </div>
+    <form method="post" action="/cart/add" class="card-add-form" onsubmit="event.preventDefault(); AuraStore.addToCart('{{ product.id }}', 1);">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <button type="submit" class="card-btn-add">
+        <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+      </button>
+    </form>
+  </div>
+</article>

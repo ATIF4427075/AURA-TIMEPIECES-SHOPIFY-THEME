@@ -1,0 +1,98 @@
+<section id="heroSection" class="hero-section" aria-label="Hero Spotlight">
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="hero-rating-pill">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <span class="reviews-text">4.95/5 Rating &bull; Over 840+ Verified Buyers</span>
+        </div>
+
+        <div class="section-tag" style="margin-bottom: 12px;">
+          <i class="fa-solid fa-crown"></i> PAGANI DESIGN &bull; TIMELESS STYLE SINCE 2008
+        </div>
+
+        <h1 class="hero-title">
+          CLASSIC DIVE <br>
+          <span class="gold-text">STYLE 100M</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          <strong>More Than Just a Watch &mdash; Luxury on Your Wrist.</strong> Built for adventure, designed for you. Powered by the Japanese Seiko NH35A automatic movement (no battery needed), scratch-proof synthetic sapphire crystal, and 100M water resistance.
+        </p>
+
+        <!-- Price Box -->
+        <div class="hero-price-box">
+          <div>
+            <div style="font-size: 0.76rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.1em;">Special Launch Price</div>
+            <div style="display: flex; align-items: baseline; gap: 12px; margin-top: 4px;">
+              <span class="hero-price-current">₨ 24,999</span>
+              <span class="hero-price-compare">₨ 34,999</span>
+            </div>
+          </div>
+          <span class="hero-discount-badge"><i class="fa-solid fa-bolt"></i> SAVE 28%</span>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta-group">
+          <button class="btn btn-primary" onclick="AuraStore.addToCart('pagani-classic-dive', 1)">
+            <i class="fa-solid fa-bag-shopping"></i> Order Now &bull; ₨ 24,999
+          </button>
+          <a href="#paganiSection" class="btn btn-secondary">
+            <i class="fa-solid fa-magnifying-glass-plus"></i> View Details & Specs
+          </a>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="hero-trust-mini">
+          <div class="trust-item-mini">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Free Cash on Delivery (COD)</span>
+          </div>
+          <div class="trust-item-mini">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>5-Year Warranty</span>
+          </div>
+          <div class="trust-item-mini">
+            <i class="fa-solid fa-certificate"></i>
+            <span>100% Original Guaranteed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual: User's Pagani Poster Image -->
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <img src="{{ 'pagani_dive_poster.jpg' | asset_url | default: 'assets/images/pagani_dive_poster.jpg' }}" alt="Pagani Design Classic Dive Style Men's Automatic Watch" loading="eager" style="object-position: center top;">
+          <div class="hero-floating-card">
+            <div class="floating-icon">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <div class="floating-info">
+              <h5>Japanese Seiko NH35A Automatic</h5>
+              <p>No Battery Needed &bull; 100M Water Resistant &bull; Sapphire Glass</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Hero Section"
+    }
+  ]
+}
+{% endschema %}
